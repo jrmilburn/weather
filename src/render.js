@@ -20,6 +20,9 @@ export function render(weatherData) {
     const FeelsTemp = document.createElement('p');
     const weatherPic = document.createElement('img');
 
+    const Humidity = document.createElement('div');
+    const Wind = document.createElement('div');
+
 
 
     //update textcontent of elements
