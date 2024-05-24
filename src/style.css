@@ -20,6 +20,10 @@ body {
 .logo {
     grid-row: 1/2;
     grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
 }
 
 .search {
@@ -30,6 +34,29 @@ body {
 .temp-type {
     grid-row: 1/2;
     grid-column: 3/4;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.temp-type button {
+    padding: 0.25rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.5); 
+    background-color: white;
+    border-radius: 0.5rem;
+
+    transition: scale 0.2s, transform 0.2s;
+}
+
+.temp-type button:hover {
+    cursor: pointer;
+}
+
+.temp-type>.selected-button {
+    border: 2px solid rgba(0, 0, 0, 1);
+    scale: 1.1;
+    transform: translateY(-2%);
 }
 
 .main {
@@ -59,6 +86,8 @@ body {
 }
 
 .main-details {
+    display: grid;
+    align-items: center;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
 }
@@ -69,12 +98,13 @@ body {
     align-content: center;
 }
 
-img {
+.weather-main>img {
     width: 4rem;
     height: 4rem;
     scale: 1.2;
     position: absolute;
     transform: translate(-65%, -15%);
+    z-index: -1;
 
 }
 
@@ -84,4 +114,32 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+form input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.3);;
+}
+
+form button {
+    border: none;
+    background: none;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    transition: scale 0.5s, transform 0.5s;
+}
+
+form button:hover {
+    scale: 1.1;
+    transform: translateY(-3%);
+    cursor: pointer;
 }
